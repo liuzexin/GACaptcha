@@ -1,7 +1,7 @@
 # GACaptcha #
 
 ## Instruction ##
-GACaptcha is a captcha verification for Yii2.
+GACaptcha is a captcha package for Yii2.
 
 ## Installation ##
 
