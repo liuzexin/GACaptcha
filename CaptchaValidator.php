@@ -17,7 +17,7 @@ class CaptchaValidator extends Validator{
 
     public $skipOnEmpty = false;
 
-    public $caseSensitive = true;
+    public $caseSensitive = false;
 
     public $captchaAction = 'site/captcha';
 
