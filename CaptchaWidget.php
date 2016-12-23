@@ -9,10 +9,12 @@
 namespace ga\captcha;
 use yii\widgets\InputWidget;
 use yii\helpers\Html;
+use yii\helpers\Url;
 
-class CaptchaWidget extends InputWidget{
+class CaptchaWidget extends InputWidget
+{
 
-    public $captchaAction = 'site/captcha';
+    public $captchaAction = 'site/verify';
 
     public $template = '{input}{image}';
 
@@ -20,7 +22,8 @@ class CaptchaWidget extends InputWidget{
 
     private $imageID = 'ga-captcha';
 
-    public function run(){
+    public function run()
+    {
 
         $this->reloadID();
 
@@ -31,7 +34,7 @@ class CaptchaWidget extends InputWidget{
         } else {
             $input = Html::textInput($this->name, $this->value, $this->options);
         }
-        $route = $this->captchaAction;
+        $route = Url::toRoute($this->captchaAction);
 
         $image = Html::img($route, $this->imageOptions);
         echo strtr($this->template, [
@@ -40,23 +43,25 @@ class CaptchaWidget extends InputWidget{
         ]);
     }
 
-    protected function reloadID(){
+    protected function reloadID()
+    {
 
-        if(empty($this->imageOptions)){
+        if (empty($this->imageOptions)) {
             $this->imageOptions['id'] = $this->imageID;
-        }else{
-            $this->imageID =  $this->imageOptions['id'];
+        } else {
+            $this->imageID = $this->imageOptions['id'];
         }
 
     }
 
-    protected function registerJS(){
+    protected function registerJS()
+    {
         $js = <<<JS
         jQuery(window).ready(function(){
             var dom = jQuery('#$this->imageID');
             var id = 1;
             dom.click(function(){
-                dom.attr('src', '/site/captcha' + '?id=' + id);
+                dom.attr('src', '/site/verify' + '?id=' + id);
                 id++;
             });
         });
