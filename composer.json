@@ -11,7 +11,7 @@
   ],
   "minimum-stability": "dev",
   "require": {
-      "bower-asset/jquery": "2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable",
+      "bower-asset/jquery": "2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable"
   },
   "autoload": {
     "psr-4": {
