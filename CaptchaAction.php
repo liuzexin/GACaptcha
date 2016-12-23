@@ -49,8 +49,6 @@ class CaptchaAction extends Action
 
     public $marginLR = 10;
 
-    public $marginTB = 10;
-
     public $sessionKey = 'ga/Captcha';
 
     protected function beforeRun(){
@@ -110,14 +108,12 @@ class CaptchaAction extends Action
         }
 
         $width = ($this->width - 2 * $this->marginLR) / 6;
-        $height = ($this->height - 2 * $this->marginTB);
         for($i = 0; $i < $this->maxChar; $i++){
             $size = mt_rand($this->minFontSize, $this->maxFontSize);
             $angle = mt_rand($this->minAngle, $this->maxAngle);
             $x = $i * $width + $this->marginLR;
             $fontHeight = imagefontheight($size);
-            $y = mt_rand($fontHeight + $this->marginTB, $height - $fontHeight + $this->marginTB);
-            imagettftext($image ,$size ,$angle, $x, $y, $this->randColor($image), Yii::getAlias($this->fontFile), substr($this->getRandomString(), $i, 1));
+            imagettftext($image ,$size ,$angle, $x, $this->height/2 + $fontHeight / 2, $this->randColor($image), Yii::getAlias($this->fontFile), substr($this->getRandomString(), $i, 1));
         }
     }
 
