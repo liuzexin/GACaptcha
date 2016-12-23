@@ -6,7 +6,7 @@
  * Time: 上午10:14
  */
 
-namespace app\components;
+namespace ga\captcha;
 
 use Yii;
 use yii\base\Action;

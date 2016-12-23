@@ -6,7 +6,7 @@
  * Time: 下午4:10
  */
 
-namespace app\components;
+namespace ga\captcha;
 
 use Yii;
 use yii\validators\Validator;

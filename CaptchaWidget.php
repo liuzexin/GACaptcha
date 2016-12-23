@@ -6,7 +6,7 @@
  * Time: 下午2:25
  */
 
-namespace app\models;
+namespace ga\captcha;
 use yii\widgets\InputWidget;
 use yii\helpers\Html;
 
