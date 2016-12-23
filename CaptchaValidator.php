@@ -19,7 +19,7 @@ class CaptchaValidator extends Validator{
 
     public $caseSensitive = true;
 
-    public $captchaAction = 'site/verify';
+    public $captchaAction = 'site/captcha';
 
     public function init(){
 
