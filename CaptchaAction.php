@@ -20,7 +20,7 @@ class CaptchaAction extends Action
 
     public $height = 50;
 
-    public $fontFile = '@app/components/HansKendrickV-Regular.ttf';
+    public $fontFile = '@vendor/ga/captcha/font/HansKendrickV-Regular.ttf';
 
     public $maxAngle = 10;
 
