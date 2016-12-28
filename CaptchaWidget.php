@@ -14,7 +14,7 @@ use yii\helpers\Url;
 class CaptchaWidget extends InputWidget
 {
 
-    public $captchaAction = 'site/verify';
+    public $captchaAction = 'site/captcha';
 
     public $template = '{input}{image}';
 
@@ -61,7 +61,7 @@ class CaptchaWidget extends InputWidget
             var dom = jQuery('#$this->imageID');
             var id = 1;
             dom.click(function(){
-                dom.attr('src', '/site/verify' + '?id=' + id);
+                dom.attr('src', '/' + '$this->captchaAction' + '?id=' + id);
                 id++;
             });
         });
