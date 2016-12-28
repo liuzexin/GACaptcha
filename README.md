@@ -56,3 +56,8 @@ public function actionTest(){
     }
 }
 ```
+## Others ##
+
+Thanks for the author of `HansKendrickV-Regular.ttf` to provide the nice free font. 
+
+
