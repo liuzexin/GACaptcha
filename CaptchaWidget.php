@@ -39,7 +39,7 @@ class CaptchaWidget extends InputWidget
         $image = Html::img($route, $this->imageOptions);
         echo strtr($this->template, [
             '{input}' => $input,
-            '{image}' => $image,
+            '{image}' => "<a href='#'>$image</a>",
         ]);
     }
 
